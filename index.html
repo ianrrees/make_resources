@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Notes on make</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>make</h1>
+					<!--what-->
+					<p>make is a program that can help you organise building programs.
+					It is typically used on UNIX-ish systems, for building programs in compiled languages like C.</p>
+					<p>It has been an industry standard tool for decades.</p>
+				</section>
+
+				<section>
+					<h2>where?</h2>
+					Make is good for small to mid-size projects.
+				</section>
+
+				<section>
+					<!--Makefile syntax cheat sheet - must be a good one online-->
+					use tabs
+					preceed with @ to suppress console output
+					variables and ifeq/ifdef/endif
+
+					Wildcards with %
+				</section>
+
+				<section>
+					<!--CLI cheatsheet-->
+					-jN
+					-D
+					verbose
+
+				</section>
+
+				<section>
+					automatic dependency generation
+				</section>
+
+				<section>
+					Other uses:
+					Parallelizing tasks
+				</section>
+
+				<section>
+					<h2>Further Reading</h2>
+					<ul>
+						<li><a href="https://matthias-endler.de/2017/makefiles/">Matthias Endler's blog post</a> - on <a href="https://news.ycombinator.com/">HN</a> yesterday.</li>
+						<li><code>$info make</code>, or <a href="https://www.gnu.org/software/make/manual/make.html">on the web</a></li>
+					</ul>
+
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
