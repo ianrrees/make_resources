@@ -38,24 +38,65 @@
 				</section>
 
 				<section>
-					<!--Makefile syntax cheat sheet - must be a good one online-->
-					use tabs
-					preceed with @ to suppress console output
-					variables and ifeq/ifdef/endif
-
-					Wildcards with %
+					<h1>Standards...</h1>
+					<ul>
+						<li>GNU - Standard on Linux and MacOS, available everywhere, discussed here</li>
+						<li>POSIX - Available everywhere-er<small>Specify a special <code>.POSIX:</code> target in Makefile to get behaviour from compliant implementations</small></li>
+						<li>BSD - Reasonably common</li>
+						<li>Microsoft, etc. - Why?</li>
+					</ul>
 				</section>
 
 				<section>
-					<!--CLI cheatsheet-->
-					-jN
-					-D
-					verbose
-
+					<h1>make -v</h1>
+					Reasonably current Ubuntu: GNU Make 4.1
+					MacOS 10.12: GNU Make 3.81 <small>(2006)</small>
+					(with Homebrew): GNU Make 4.2.1
+					Fedora 24: GNU Make 4.1
 				</section>
 
 				<section>
-					automatic dependency generation
+					<h1>Related Tools</h1>
+					<ul>
+						<li>cmake</li>
+						<li>autotools</li>
+						<li>qmake</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Tips</h2>
+					<p><small><a href="http://www.schacherer.de/frank/technology/tools/make.html">Plenty of guides online</a> - a couple things I find handy:</small></p>
+					<ul>
+						<li>Use -d and/or -n to see what's going on</li>
+						<li>Use -jN to build in parallel, leave it off for debugging</li>
+						<li>Prepend @ to suppress console output</li>
+						<li>Can have multiple targets:</li>
+					</ul>
+					<br/>
+					<code>cryptic-filename.hex firmware: main.c<br />
+						&lt;tab&gt;@echo "Building firmware"
+					</code>
+				</section>
+
+				<section>
+					<h1>Deugging</h1>
+					<ul>
+						<li>-j1 (!)</li>
+						<li>-n</li>
+						<li>verbose=1</li>
+					</ul>
+				</section>
+
+				<section>
+					<p>From the manual: <i>You can write recursive make commands just by copying this example, but there are many things to know about how they work and why</i></p>
+					<p><small>
+					Try to keep just one monolithic Makefile at the top level of a project, unless parts are truly independent.
+					</small></p>
+				</section>
+
+				<section>
+					gcc-like compilers have a <code>-M</code> option, which outputs dependencies, use this to 
 				</section>
 
 				<section>
